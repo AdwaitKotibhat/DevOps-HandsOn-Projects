@@ -24,7 +24,10 @@ pipeline {
         stage('Test Application') {
             steps {
                 sh '''
-                docker exec $(docker ps -q -f python-app-jenkins-demo) \
+                sleep 5
+                docker run --rm \
+                --network host \
+                curlimages/curl \
                 curl --fail http://localhost:5000
                 '''
             }

@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/AdwaitKotibhat/DevOps-HandsOn-Projects'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t python-app-jenkins-demo ./project-3/python-app-docker-jenkins/'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                sh 'docker run -d -p 5000:5000 python-app-jenkins-demo'
+            }
+        }
+
+        stage('Test Application') {
+            steps {
+                sh '''
+                sleep 5
+                curl --fail http://localhost:5000
+                '''
+            }
+        }
+    }
+}

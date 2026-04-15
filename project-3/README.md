@@ -7,7 +7,8 @@
 **Jenkins console output**
 
 
-<img width="870" height="435" alt="image" src="https://github.com/user-attachments/assets/e64bfd4c-17c5-48ac-a501-99b03982db18" />
+<img width="742" height="417" alt="image" src="https://github.com/user-attachments/assets/400203b9-4048-444f-af10-6c6f8c6f9b8f" />
+
 
 
 

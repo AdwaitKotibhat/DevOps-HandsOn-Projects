@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/AdwaitKotibhat/DevOps-HandsOn-Projects'
+                git 'https://github.com/AdwaitKotibhat/DevOps-HandsOn-Projects.git'
             }
         }
 

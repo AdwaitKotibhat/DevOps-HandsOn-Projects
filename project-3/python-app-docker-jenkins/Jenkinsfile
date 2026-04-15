@@ -20,15 +20,6 @@ pipeline {
                 sh 'docker run -d -p 5000:5000 python-app-jenkins-demo'
             }
         }
-
-        stage('Test Application') {
-            steps {
-                sh '''
-                sleep 5
-                curl --fail http://localhost:5000
-                '''
-            }
-        }
         
         stage('Test Application') {
             steps {

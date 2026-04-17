@@ -1,4 +1,4 @@
-**Loadbalancer (NGINX) app**
+**Reverse Proxy (NGINX) app**
 
 Port: 8000
 

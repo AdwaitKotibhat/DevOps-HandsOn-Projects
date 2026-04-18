@@ -6,3 +6,13 @@
 
 **Pods status:**
 <img width="937" height="92" alt="image" src="https://github.com/user-attachments/assets/0d476adb-efed-4502-9189-66be884f91b7" />
+
+
+**Port Forwarding Output:**
+
+`kubectl -n devops-cluster port-forward service/pyth
+on-app-service 8005:80 >>>>>>>>>>>
+Forwarding from 127.0.0.1:8005 -> 5000
+Forwarding from [::1]:8005 -> 5000
+Handling connection for 8005
+Handling connection for 8005`

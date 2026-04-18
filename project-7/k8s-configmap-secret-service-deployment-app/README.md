@@ -10,8 +10,7 @@
 
 **Port Forwarding Output:**
 
-`kubectl -n devops-cluster port-forward service/pyth
-on-app-service 8005:80 >>>>>>>>>>>
+`kubectl -n devops-cluster port-forward service/python-app-service 8005:80 >>>>>>>>>>>
 Forwarding from 127.0.0.1:8005 -> 5000
 Forwarding from [::1]:8005 -> 5000
 Handling connection for 8005

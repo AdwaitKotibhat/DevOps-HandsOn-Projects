@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment-v2
+  namespace: devops-cluster
+
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+        version: v2
+    spec:
+      containers:
+        - name: python-app
+          image: python-app:v2
+          imagePullPolicy: Never
+          ports:
+           - containerPort: 5000
+          env:
+           - name: APP_COLOR
+             valueFrom:
+               configMapKeyRef:
+                 name: python-app-config
+                 key: APP_COLOR
+           - name: DB_PASSWORD
+             valueFrom:
+               secretKeyRef:
+                 name: python-app-secret
+                 key: DB_PASSWORD
+
